@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教育部因材網時空學園：超詳細神級攻略介紹系統×快樂鯉魚秋老虎</title>
+  <meta name="description" content="由國立臺灣科技大學迷你教育遊戲研究團隊（NTUSTMEG）與教育部因材網攜手打造，結合遊戲心理學與認知心理學的跨平臺大型素養解題卡片遊戲完整指南。" />
+
+  <!-- 字體與 Font Awesome 6 Free CDN（全站唯一圖示系統） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 動態星空與環境光暈 -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       頂部響應式導覽列
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="#top" class="brand-icon" aria-label="回到教育部因材網時空學園首頁">
+          <i class="fa-solid fa-atom"></i>
+        </a>
+        <div class="brand-text">
+          <a href="#top" class="brand-title">教育部因材網時空學園</a>
+          <span class="brand-sub">
+            超詳細神級攻略介紹系統×<a href="https://www.facebook.com/happyliyuchilltiger/" target="_blank" rel="noopener noreferrer" class="brand-fb-link" aria-label="前往 Facebook 粉絲專頁：快樂鯉魚秋老虎"><i class="fa-brands fa-facebook"></i> 快樂鯉魚秋老虎</a>
+          </span>
+        </div>
+      </div>
+
+      <nav aria-label="主導覽選單">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#overview"><i class="fa-solid fa-compass"></i> 遊戲總覽</a></li>
+          <li><a href="#worldview"><i class="fa-solid fa-shield-halved"></i> 角色體系</a></li>
+          <li><a href="#cards"><i class="fa-solid fa-layer-group"></i> 知識卡圖鑑</a></li>
+          <li><a href="#gameplay"><i class="fa-solid fa-gamepad"></i> 玩法攻略</a></li>
+          <li><a href="#progression"><i class="fa-solid fa-trophy"></i> 養成與新版</a></li>
+          <li><a href="#quick-guide"><i class="fa-solid fa-circle-info"></i> 快速指南</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://adl.edu.tw/twa/game/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-rocket"></i> 前往遊玩
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="切換導覽選單" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ====================================================================
+         Hero 主視覺區
+         ==================================================================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i class="fa-solid fa-star"></i>
+              <span>NTUSTMEG × 教育部資科司 × 教育部因材網</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="gradient-text">時空學園</span><br />
+              大型素養解題卡片遊戲
+            </h1>
+
+            <p class="hero-subtitle">
+              讓你蛻變為情境素養題閱讀理解高手！化身時空學園招募的「天選之人」，駕馭國語、英語、數學、自然、社會與跨領域知識卡，攜手時空導師與進化戰寵穿越古今戰場，擊退破壞時空秩序的宇宙魔王，挑戰成為全國素養知識王！
+            </p>
+
+            <div class="hero-cta">
+              <a href="https://adl.edu.tw/twa/game/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fa-solid fa-play"></i> 《時空學園》官方網站
+              </a>
+              <a href="https://reurl.cc/86Lv6j" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <i class="fa-solid fa-file-pen"></i> 《時空學園》命題資源
+              </a>
+              <a href="#gameplay" class="btn btn-outline">
+                <i class="fa-solid fa-book-journal-whills"></i> 瀏覽完整玩法攻略
+              </a>
+            </div>
+
+            <div class="hero-meta-strip">
+              <span class="hero-meta-item">
+                <i class="fa-solid fa-clock"></i> 每日 07:00 – 22:00 開放
+              </span>
+              <span class="hero-meta-item">
+                <i class="fa-solid fa-laptop-code"></i> 跨平臺網頁免安裝
+              </span>
+              <span class="hero-meta-item">
+                <i class="fa-solid fa-users"></i> 1–12 年級、教師與大眾適用
+              </span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-art-frame">
+              <img src="image/hero-portal.jpg" alt="時空學園原創科幻星際傳送門與知識卡牌概念主視覺" />
+              <div class="hero-float-chip">
+                <i class="fa-solid fa-crown"></i> 素養知識王挑戰賽
+              </div>
+              <div class="hero-art-overlay">
+                <div class="hero-art-caption">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  <span>穿越多元時代・解鎖五科知識能量</span>
+                </div>
+                <span class="pill cyan"><i class="fa-solid fa-globe"></i> 網頁即玩</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 核心數據儀表條 -->
+        <div class="stats-bar reveal">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="stat-value font-tech">1–12+</div>
+            <div class="stat-label">國小至高中與全民皆宜</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="stat-value font-tech">10 大類</div>
+            <div class="stat-label">完整跨領域知識卡系統</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+            <div class="stat-value font-tech">91+ 項</div>
+            <div class="stat-label">璀璨成就與積分獎勵</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-people-group"></i></div>
+            <div class="stat-value font-tech">1–4 人</div>
+            <div class="stat-label">單人、多人協作與陣營對決</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="stat-value font-tech">AI 協作</div>
+            <div class="stat-label">黑洞 AI 導師與教師擬題</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         章節一：遊戲總覽與教育理念
+         ==================================================================== -->
+    <section id="overview" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="fa-solid fa-brain"></i> 遊戲核心理念</div>
+          <h2 class="section-title">結合認知心理學與電競卡牌的素養學習殿堂</h2>
+          <p class="section-desc">
+            《時空學園》由國立臺灣科技大學迷你教育遊戲研究團隊（NTUSTMEG，侯惠澤特聘教授主持）研發，教育部資訊及科技教育司與教育部因材網指導推動，將長篇情境素養題轉化為熱血刺激的策略解題對決。
+          </p>
+        </div>
+
+        <div class="grid-2 reveal">
+          <article class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-microscope"></i></div>
+            <h3 class="card-title">鷹架導向遊戲認知設計</h3>
+            <p class="card-text">
+              依據嚴謹的<strong>遊戲心理學</strong>與<strong>認知心理學</strong>打造，透過時空穿梭籌備期、戰寵階層式鷹架提示、知識卡迴紋針外部檢索與即時解答剖析，讓學習者在沉浸式挑戰中自然跨越閱讀障礙，精準對應國中會考與高中學測的情境素養題組。
+            </p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check-double"></i><span>限時節奏激發專注力，擺脫傳統紙本刷題的枯燥感。</span></li>
+              <li><i class="fa-solid fa-check-double"></i><span>戰寵提供關鍵字、整體與答案區三層鷹架，循序引導獨立思考。</span></li>
+              <li><i class="fa-solid fa-check-double"></i><span>結合個人學習紀錄與因材網數據，隨時掌握各科素養成長曲線。</span></li>
+            </ul>
+          </article>
+
+          <article class="glass-card">
+            <div class="icon-box purple"><i class="fa-solid fa-university"></i></div>
+            <h3 class="card-title">跨平臺全民素養競技場</h3>
+            <p class="card-text">
+              無需下載龐大安裝檔，只要透過瀏覽器造訪官方平臺即可跨裝置暢玩。無論是課堂教學互動、同校好友組隊競賽，或是社會大眾自我挑戰，都能找到最適合的學習節奏。
+            </p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check-double"></i><span>支援電腦、平板與手機瀏覽器，零門檻隨時展開時空任務。</span></li>
+              <li><i class="fa-solid fa-check-double"></i><span>內建貼心無障礙設定：可一鍵切換<strong>注音顯示</strong>、字體大小與音樂音效。</span></li>
+              <li><i class="fa-solid fa-check-double"></i><span>涵蓋國語、英語、數學、自然、社會與跨領域在地文化情境題組。</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- 五大核心素養能力 -->
+        <div class="grid-5 reveal" style="margin-top: 28px;">
+          <div class="glass-card" style="padding: 22px; text-align: center;">
+            <div class="icon-box" style="margin: 0 auto 14px;"><i class="fa-solid fa-book-open-reader"></i></div>
+            <h4 class="card-title" style="justify-content: center; font-size: 1.05rem;">限時閱讀理解</h4>
+            <p class="card-text" style="font-size: 0.88rem;">在 60 秒戰鬥時限內迅速掌握長文主旨與核心情境。</p>
+          </div>
+          <div class="glass-card" style="padding: 22px; text-align: center;">
+            <div class="icon-box purple" style="margin: 0 auto 14px;"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h4 class="card-title" style="justify-content: center; font-size: 1.05rem;">資訊快速搜尋</h4>
+            <p class="card-text" style="font-size: 0.88rem;">從文本線索與知識卡庫中精準鎖定關鍵證據。</p>
+          </div>
+          <div class="glass-card" style="padding: 22px; text-align: center;">
+            <div class="icon-box gold" style="margin: 0 auto 14px;"><i class="fa-solid fa-list-check"></i></div>
+            <h4 class="card-title" style="justify-content: center; font-size: 1.05rem;">重點摘要分析</h4>
+            <p class="card-text" style="font-size: 0.88rem;">去蕪存菁，歸納多段跨科資訊並過濾干擾選項。</p>
+          </div>
+          <div class="glass-card" style="padding: 22px; text-align: center;">
+            <div class="icon-box emerald" style="margin: 0 auto 14px;"><i class="fa-solid fa-diagram-project"></i></div>
+            <h4 class="card-title" style="justify-content: center; font-size: 1.05rem;">脈絡邏輯推論</h4>
+            <p class="card-text" style="font-size: 0.88rem;">串聯因果關係、時序變化與科學原理完成高階推理。</p>
+          </div>
+          <div class="glass-card" style="padding: 22px; text-align: center;">
+            <div class="icon-box pink" style="margin: 0 auto 14px;"><i class="fa-solid fa-comments"></i></div>
+            <h4 class="card-title" style="justify-content: center; font-size: 1.05rem;">團隊策略溝通</h4>
+            <p class="card-text" style="font-size: 0.88rem;">在組隊協作與陣營對決中分工查證、討論戰術。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         章節二：世界觀與三大角色體系
+         ==================================================================== -->
+    <section id="worldview" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="fa-solid fa-meteor"></i> 世界觀與角色檔案</div>
+          <h2 class="section-title">捍衛時空秩序的三大陣營與角色體系</h2>
+          <p class="section-desc">
+            神祕機構「時空學園」緊急招募擁有知識潛能的「天選之人」，搭乘時空飛梭穿梭各大歷史與現代時空，與時空導師、進化戰寵並肩對抗企圖掠奪能量的宇宙魔王！
+          </p>
+        </div>
+
+        <!-- 世界觀概念圖與背景引言 -->
+        <div class="glass-card story-banner reveal">
+          <div>
+            <span class="pill purple"><i class="fa-solid fa-shuttle-space"></i> 任務背景</span>
+            <h3 class="card-title" style="font-size: 1.45rem; margin-top: 12px;">
+              時空裂縫危機：以知識為武器的星際防衛戰
+            </h3>
+            <p class="card-text" style="margin-bottom: 14px;">
+              來自宇宙深處的「時空破壞者」聯手出擊，潛伏於不同時代與地理區域瘋狂蒐集知識能量，導致歷史脈絡與自然秩序面臨崩解。唯有進入時空學園、熟練駕馭國語、英語、數學、自然、社會與跨領域知識卡的戰士，才能透過精準解題化為最強能量光束，徹底淨化時空危機！
+            </p>
+            <div class="pill-group">
+              <span class="pill cyan"><i class="fa-solid fa-book"></i> 國語</span>
+              <span class="pill cyan"><i class="fa-solid fa-language"></i> 英語</span>
+              <span class="pill cyan"><i class="fa-solid fa-calculator"></i> 數學</span>
+              <span class="pill cyan"><i class="fa-solid fa-flask"></i> 自然</span>
+              <span class="pill cyan"><i class="fa-solid fa-earth-asia"></i> 社會</span>
+              <span class="pill gold"><i class="fa-solid fa-infinity"></i> 跨領域素養</span>
+            </div>
+          </div>
+          <div class="art-showcase">
+            <img src="image/battle-arena.jpg" alt="時空戰士與星際巨龍魔王在時空裂縫展開卡牌對決的原創概念插畫" />
+            <div class="art-badge">
+              <i class="fa-solid fa-burst"></i> 原創概念視覺：時空裂縫卡牌對決
+            </div>
+          </div>
+        </div>
+
+        <!-- 三大角色體系互動分頁 -->
+        <div data-tab-group="characters" class="reveal">
+          <div class="tabs-nav" role="tablist">
+            <button class="tab-btn active" data-tab="mentors" role="tab" aria-selected="true">
+              <i class="fa-solid fa-user-shield"></i> 時空導師（自動升級與 7 大技能）
+            </button>
+            <button class="tab-btn" data-tab="pets" role="tab" aria-selected="false">
+              <i class="fa-solid fa-paw"></i> 時空戰寵（四大種族與三階進化）
+            </button>
+            <button class="tab-btn" data-tab="bosses" role="tab" aria-selected="false">
+              <i class="fa-solid fa-dragon"></i> 時空破壞者（四大級別與魔王戰史）
+            </button>
+          </div>
+
+          <!-- 分頁 1：時空導師 -->
+          <div class="tab-panel active" data-panel="mentors">
+            <div class="grid-2">
+              <div class="glass-card">
+                <h3 class="card-title"><i class="fa-solid fa-hat-wizard" style="color: var(--cyan);"></i> 學科專屬導師陣容</h3>
+                <p class="card-text">
+                  每位時空導師皆代表特定學科領域，當任務題目包含該導師的所屬科目時，其強力被動與戰隊加成技能就會自動觸發！在多人協作模式下，多位符合科目的導師技能更能<strong>互相疊加</strong>，發揮驚人戰力。
+                </p>
+                <div class="pill-group" style="margin-top: 18px;">
+                  <span class="pill cyan"><i class="fa-solid fa-pen-nib"></i> 國語小劍士</span>
+                  <span class="pill purple"><i class="fa-solid fa-wand-sparkles"></i> 英語小術士</span>
+                  <span class="pill gold"><i class="fa-solid fa-user-ninja"></i> 數學小忍者</span>
+                  <span class="pill emerald"><i class="fa-solid fa-leaf"></i> 自然小遊俠</span>
+                  <span class="pill pink"><i class="fa-solid fa-magnifying-glass-location"></i> 社會小偵探</span>
+                  <span class="pill"><i class="fa-solid fa-atom"></i> 理化聖騎士（進階）</span>
+                  <span class="pill"><i class="fa-solid fa-flask-vial"></i> 化學煉金術師（進階）</span>
+                </div>
+
+                <div class="callout-box cyan">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  <div>
+                    <strong>實戰技能範例：英語小術士「ABC 魔法陣」</strong>
+                    <p class="card-text" style="margin-top: 4px;">
+                      若本次任務科目包含「英語」，全戰隊防禦力大幅增加 <strong>100 點</strong>（最低僅受 85 點傷害），並且在戰鬥結算時額外獲得 <strong>10% 能量</strong>！
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card">
+                <h3 class="card-title"><i class="fa-solid fa-bolt-lightning" style="color: var(--gold);"></i> 7 大導師技能類型</h3>
+                <p class="card-text">導師等級提升後會陸續解鎖涵蓋攻防輔助與資源增幅的七大核心能力：</p>
+                <ul class="feature-list">
+                  <li><i class="fa-solid fa-heart-pulse"></i><span><strong>增加最大血量</strong>：拉高戰隊總耐力，容錯率大幅上升。</span></li>
+                  <li><i class="fa-solid fa-shield"></i><span><strong>提升防禦力</strong>：有效減免魔王反擊所造成的傷害。</span></li>
+                  <li><i class="fa-solid fa-ban"></i><span><strong>標記錯誤卡片</strong>：協助排除干擾選項，提高出擊準確度。</span></li>
+                  <li><i class="fa-solid fa-kit-medical"></i><span><strong>回復血量</strong>：於拉鋸戰中穩定續航，逆轉劣勢。</span></li>
+                  <li><i class="fa-solid fa-shield-virus"></i><span><strong>戰隊護盾</strong>：直接吸收關鍵傷害，保護團隊防線。</span></li>
+                  <li><i class="fa-solid fa-chart-line"></i><span><strong>獲得積分提高</strong>：衝刺全國排行榜與積分賽的必備加成。</span></li>
+                  <li><i class="fa-solid fa-battery-full"></i><span><strong>獲得能量提高</strong>：加速累積戰寵解鎖與進化所需資源。</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout-box" style="margin-top: 24px;">
+              <i class="fa-solid fa-key"></i>
+              <div>
+                <strong>導師自動升級與隱藏練等秘訣</strong>
+                <p class="card-text" style="margin-top: 4px;">
+                  時空導師採取<strong>自動升級機制</strong>，只要帶著導師參與戰鬥就會累積經驗值，達到指定等級即自動開啟全新技能。<strong>老手隱藏秘訣</strong>：在「時空穿梭」籌備階段中，主動點擊知識卡上的外部<strong>「迴紋針連結」</strong>閱讀延伸資料，不只能補充答題線索，更能額外提升導師經驗值！
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 分頁 2：時空戰寵 -->
+          <div class="tab-panel" data-panel="pets">
+            <div class="grid-2" style="margin-bottom: 24px;">
+              <div class="glass-card">
+                <h3 class="card-title"><i class="fa-solid fa-star" style="color: var(--cyan);"></i> 四大種族與出戰規則</h3>
+                <p class="card-text">
+                  時空戰寵是解題時的關鍵鷹架夥伴！每場戰鬥最多可攜帶 <strong>3 隻戰寵</strong>出擊（於戰寵選擇區點擊右上角移除鈕即可自由替換），每隻戰寵<strong>每場戰鬥可使用 1 次</strong>強力提示技能。
+                </p>
+                <div class="pill-group" style="margin-top: 16px;">
+                  <span class="pill gold"><i class="fa-solid fa-dragon"></i> 神獸類</span>
+                  <span class="pill cyan"><i class="fa-solid fa-robot"></i> 機械類</span>
+                  <span class="pill purple"><i class="fa-solid fa-wand-sparkles"></i> 精靈類</span>
+                  <span class="pill emerald"><i class="fa-solid fa-droplet"></i> 元素類</span>
+                </div>
+
+                <!-- 原創 SVG：戰寵三階進化流程圖 -->
+                <div class="svg-diagram-box" style="margin-top: 20px;">
+                  <svg viewBox="0 0 600 135" role="img" aria-label="時空戰寵三階進化養成流程圖">
+                    <defs>
+                      <linearGradient id="evoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#00f0ff" />
+                        <stop offset="50%" stop-color="#a855f7" />
+                        <stop offset="100%" stop-color="#fbbf24" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="10" y="25" width="120" height="80" rx="14" fill="rgba(0,240,255,0.12)" stroke="#00f0ff" stroke-width="1.5" />
+                    <text x="70" y="57" fill="#00f0ff" font-size="13" font-weight="800" text-anchor="middle">消耗能量取得</text>
+                    <text x="70" y="80" fill="#cbd5e1" font-size="12" text-anchor="middle">第一階戰寵</text>
+
+                    <path d="M136 65 L178 65" stroke="url(#evoGrad)" stroke-width="3" stroke-dasharray="5 3" />
+                    <polygon points="178,59 190,65 178,71" fill="#a855f7" />
+
+                    <rect x="196" y="25" width="160" height="80" rx="14" fill="rgba(168,85,247,0.14)" stroke="#a855f7" stroke-width="1.5" />
+                    <text x="276" y="55" fill="#d8b4fe" font-size="13" font-weight="800" text-anchor="middle">知識書 + 能量升階</text>
+                    <text x="276" y="78" fill="#cbd5e1" font-size="12" text-anchor="middle">第二階進化形態</text>
+
+                    <path d="M362 65 L404 65" stroke="url(#evoGrad)" stroke-width="3" stroke-dasharray="5 3" />
+                    <polygon points="404,59 416,65 404,71" fill="#fbbf24" />
+
+                    <rect x="422" y="20" width="168" height="90" rx="14" fill="rgba(251,191,36,0.15)" stroke="#fbbf24" stroke-width="2" />
+                    <text x="506" y="52" fill="#fbbf24" font-size="14" font-weight="900" text-anchor="middle">終極第三階形態</text>
+                    <text x="506" y="75" fill="#f1f5f9" font-size="11.5" text-anchor="middle">外觀、名稱、技能全面強化</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="art-showcase" style="display: flex; flex-direction: column; justify-content: center;">
+                <img src="image/pet-evolution.jpg" alt="神獸、機械、精靈與元素四大種族時空戰寵與三階進化星環原創概念插畫" style="height: 100%; min-height: 290px;" />
+                <div class="art-badge">
+                  <i class="fa-solid fa-star"></i> 原創概念視覺：四大種族戰寵與三階進化星環
+                </div>
+              </div>
+            </div>
+
+            <!-- 代表戰寵技能卡片 -->
+            <div class="grid-4">
+              <div class="glass-card" style="padding: 22px;">
+                <span class="pill cyan"><i class="fa-solid fa-gem"></i> 全科關鍵字</span>
+                <h4 class="card-title" style="margin-top: 10px;">思思</h4>
+                <p class="card-text" style="font-size: 0.9rem;">
+                  <strong>技能「思思寶藏」</strong>：當任務科目包含全科時發動，一口氣開啟本題文本內<strong>所有關鍵字提示</strong>，迅速鎖定作答核心。
+                </p>
+              </div>
+              <div class="glass-card" style="padding: 22px;">
+                <span class="pill gold"><i class="fa-solid fa-bullseye"></i> 答案區指引</span>
+                <h4 class="card-title" style="margin-top: 10px;">吱吱</h4>
+                <p class="card-text" style="font-size: 0.9rem;">
+                  <strong>技能「文化吱吱」</strong>：直接開啟 <strong>1 個答案區提示</strong>，在卡關或時間緊迫時精準指點迷津。
+                </p>
+              </div>
+              <div class="glass-card" style="padding: 22px;">
+                <span class="pill pink"><i class="fa-solid fa-bolt"></i> 國語雙重提示</span>
+                <h4 class="card-title" style="margin-top: 10px;">快讚</h4>
+                <p class="card-text" style="font-size: 0.9rem;">
+                  <strong>技能「好詩快讚」</strong>：個性急性子、擅長光速傳播資訊！科目含國語時開啟<strong>所有文本關鍵字＋1 個整體提示</strong>。
+                </p>
+              </div>
+              <div class="glass-card" style="padding: 22px;">
+                <span class="pill purple"><i class="fa-solid fa-paw"></i> 多元收藏</span>
+                <h4 class="card-title" style="margin-top: 10px;">更多時空夥伴</h4>
+                <p class="card-text" style="font-size: 0.9rem;">
+                  包含<strong>水滴、可可、e度、幼角獸</strong>等豐富戰寵，透過閱讀知識卡累積知識書與能量即可解鎖並三階進化！
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 分頁 3：時空破壞者（魔王） -->
+          <div class="tab-panel" data-panel="bosses">
+            <div class="grid-4" style="margin-bottom: 24px;">
+              <div class="glass-card tier-card">
+                <span class="tier-rank rank-s"><i class="fa-solid fa-crown"></i> CLASS S（S 級）</span>
+                <h4 class="card-title">宇宙泰坦</h4>
+                <p class="card-text">活動限定登場的極稀有頂級強敵，擁有毀天滅地的壓迫感與最豐厚的討伐榮耀。</p>
+              </div>
+              <div class="glass-card tier-card">
+                <span class="tier-rank rank-a"><i class="fa-solid fa-skull"></i> CLASS 1（A 級）</span>
+                <h4 class="card-title">時空魔王</h4>
+                <p class="card-text">統御各大時空裂縫的高階首領，考驗戰士跨科整合與長篇閱讀推論的真功夫。</p>
+              </div>
+              <div class="glass-card tier-card">
+                <span class="tier-rank rank-b"><i class="fa-solid fa-fire"></i> CLASS 2（B 級）</span>
+                <h4 class="card-title">裂縫領主</h4>
+                <p class="card-text">鎮守區域戰役的精銳指揮官，適合檢驗單科與跨單元素養知識的熟練度。</p>
+              </div>
+              <div class="glass-card tier-card">
+                <span class="tier-rank rank-c"><i class="fa-solid fa-crosshairs"></i> CLASS 3（C 級）</span>
+                <h4 class="card-title">先鋒爪牙</h4>
+                <p class="card-text">潛入各時代蒐集能量的前線部隊，是新手戰士熟悉卡牌拖曳與出擊節奏的最佳對手。</p>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title"><i class="fa-solid fa-book-skull" style="color: var(--pink);"></i> 魔王戰史圖鑑收錄名單</h3>
+              <p class="card-text">
+                所有曾經遭遇並成功擊退的強敵都會永久記錄於個人頁面的<strong>「魔王戰史」</strong>中，還能查看全國戰士累計討伐次數與自身收藏進度：
+              </p>
+              <div class="pill-group" style="margin-top: 16px;">
+                <span class="pill gold"><i class="fa-solid fa-crown"></i> 斐烈大帝（一號座機／二號座機）</span>
+                <span class="pill cyan"><i class="fa-solid fa-snowflake"></i> 寒冰龍</span>
+                <span class="pill pink"><i class="fa-solid fa-fire-flame-curved"></i> 雌火龍</span>
+                <span class="pill pink"><i class="fa-solid fa-dragon"></i> 烈焰古龍</span>
+                <span class="pill purple"><i class="fa-solid fa-robot"></i> 百夫長六號</span>
+                <span class="pill"><i class="fa-solid fa-jet-fighter-up"></i> 蛟式登艦機（隊長型／士兵型）</span>
+                <span class="pill gold"><i class="fa-solid fa-meteor"></i> 加農之子（沙漠型／火星型）</span>
+                <span class="pill emerald"><i class="fa-solid fa-flag"></i> 傳令兵（沙漠型）</span>
+                <span class="pill emerald"><i class="fa-solid fa-bolt"></i> 螢火蟲獵豹</span>
+                <span class="pill purple"><i class="fa-solid fa-eye"></i> 獨眼瞭望者（夜襲型）</span>
+                <span class="pill"><i class="fa-solid fa-bomb"></i> 榴彈兵（小隊長機）</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         章節三：10 大知識卡圖鑑與檢索養成循環
+         ==================================================================== -->
+    <section id="cards" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="fa-solid fa-layer-group"></i> 知識卡系統</div>
+          <h2 class="section-title">10 大知識卡圖鑑與檢索養成循環</h2>
+          <p class="section-desc">
+            點擊下方任意知識卡類型查看戰術用途！個人「知識卡庫」支援依科目與 10 種卡片類型下拉篩選，並貼心標示「是否使用過」，讓你邊查資料邊累積養成資源。
+          </p>
+        </div>
+
+        <!-- 10 大知識卡互動格線 -->
+        <div class="kcard-grid reveal" role="listbox" aria-label="10大知識卡分類">
+          <button class="kcard-item active" data-kcard="person">
+            <div class="kcard-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+            <div class="kcard-name">人物卡</div>
+            <div class="kcard-sub font-tech">PERSON</div>
+          </button>
+          <button class="kcard-item" data-kcard="event">
+            <div class="kcard-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="kcard-name">事件卡</div>
+            <div class="kcard-sub font-tech">EVENT</div>
+          </button>
+          <button class="kcard-item" data-kcard="time">
+            <div class="kcard-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+            <div class="kcard-name">時間卡</div>
+            <div class="kcard-sub font-tech">TIME</div>
+          </button>
+          <button class="kcard-item" data-kcard="object">
+            <div class="kcard-icon"><i class="fa-solid fa-cube"></i></div>
+            <div class="kcard-name">物件卡</div>
+            <div class="kcard-sub font-tech">OBJECT</div>
+          </button>
+          <button class="kcard-item" data-kcard="place">
+            <div class="kcard-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="kcard-name">地點卡</div>
+            <div class="kcard-sub font-tech">LOCATION</div>
+          </button>
+          <button class="kcard-item" data-kcard="language">
+            <div class="kcard-icon"><i class="fa-solid fa-book-open"></i></div>
+            <div class="kcard-name">語文卡</div>
+            <div class="kcard-sub font-tech">LANGUAGE</div>
+          </button>
+          <button class="kcard-item" data-kcard="math">
+            <div class="kcard-icon"><i class="fa-solid fa-square-root-variable"></i></div>
+            <div class="kcard-name">數學卡</div>
+            <div class="kcard-sub font-tech">MATH</div>
+          </button>
+          <button class="kcard-item" data-kcard="symbol">
+            <div class="kcard-icon"><i class="fa-solid fa-icons"></i></div>
+            <div class="kcard-name">符號卡</div>
+            <div class="kcard-sub font-tech">SYMBOL</div>
+          </button>
+          <button class="kcard-item" data-kcard="concept">
+            <div class="kcard-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <div class="kcard-name">概念卡</div>
+            <div class="kcard-sub font-tech">CONCEPT</div>
+          </button>
+          <button class="kcard-item" data-kcard="phenomenon">
+            <div class="kcard-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+            <div class="kcard-name">現象卡</div>
+            <div class="kcard-sub font-tech">PHENOMENON</div>
+          </button>
+        </div>
+
+        <!-- 選中卡片詳情 + 原創 SVG 知識循環圖 -->
+        <div class="glass-card kcard-detail-panel reveal">
+          <div>
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div class="icon-box" style="margin-bottom: 0;">
+                <i id="kcardDetailIcon" class="fa-solid fa-user-astronaut"></i>
+              </div>
+              <div>
+                <h3 id="kcardDetailTitle" class="card-title" style="margin-bottom: 2px; font-size: 1.4rem;">人物卡</h3>
+                <span id="kcardDetailEn" class="font-tech" style="font-size: 0.78rem; color: var(--cyan); letter-spacing: 0.12em;">PERSON CARD</span>
+              </div>
+            </div>
+            <p id="kcardDetailDesc" class="card-text" style="margin-bottom: 14px;"></p>
+            <div class="callout-box cyan" style="margin-top: 0;">
+              <i class="fa-solid fa-compass-drafting"></i>
+              <div>
+                <strong>實戰解題心法</strong>
+                <p id="kcardDetailTip" class="card-text" style="margin-top: 4px;"></p>
+              </div>
+            </div>
+            <div id="kcardDetailTags" class="pill-group"></div>
+          </div>
+
+          <div class="svg-diagram-box">
+            <div style="font-size: 0.88rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-paperclip"></i> 閱讀知識卡與迴紋針養成正循環
+            </div>
+            <svg viewBox="0 0 420 230" role="img" aria-label="閱讀知識卡與迴紋針連結養成正循環圖解">
+              <rect x="20" y="16" width="170" height="66" rx="12" fill="rgba(0,240,255,0.12)" stroke="#00f0ff" stroke-width="1.5" />
+              <text x="105" y="44" fill="#00f0ff" font-size="13" font-weight="800" text-anchor="middle">閱讀知識卡庫</text>
+              <text x="105" y="65" fill="#cbd5e1" font-size="11" text-anchor="middle">獲各科知識書 + 能量</text>
+
+              <rect x="230" y="16" width="170" height="66" rx="12" fill="rgba(168,85,247,0.14)" stroke="#a855f7" stroke-width="1.5" />
+              <text x="315" y="44" fill="#d8b4fe" font-size="13" font-weight="800" text-anchor="middle">點擊迴紋針外部連結</text>
+              <text x="315" y="65" fill="#cbd5e1" font-size="11" text-anchor="middle">額外能量 + 導師經驗</text>
+
+              <path d="M105 88 L155 138" stroke="#00f0ff" stroke-width="2" />
+              <path d="M315 88 L265 138" stroke="#a855f7" stroke-width="2" />
+
+              <rect x="75" y="144" width="270" height="72" rx="14" fill="rgba(251,191,36,0.14)" stroke="#fbbf24" stroke-width="1.8" />
+              <text x="210" y="173" fill="#fbbf24" font-size="14" font-weight="900" text-anchor="middle">強化戰隊全面戰力</text>
+              <text x="210" y="196" fill="#f1f5f9" font-size="11.5" text-anchor="middle">導師自動解鎖技能・戰寵三階進化・高分破關</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         章節四：完整玩法全攻略
+         ==================================================================== -->
+    <section id="gameplay" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="fa-solid fa-gamepad"></i> 實戰操作手冊</div>
+          <h2 class="section-title">從登入到陣營對決：全方位玩法攻略</h2>
+          <p class="section-desc">
+            切換下方四大分頁，一次掌握三種登入管道、單人冒險 6 步驟、多人協作戰術與陣營 PvP 人數差積分倍率！
+          </p>
+        </div>
+
+        <div data-tab-group="gameplay" class="reveal">
+          <div class="tabs-nav" role="tablist">
+            <button class="tab-btn active" data-tab="login" role="tab" aria-selected="true">
+              <i class="fa-solid fa-right-to-bracket"></i> 三種登入與設定
+            </button>
+            <button class="tab-btn" data-tab="solo" role="tab" aria-selected="false">
+              <i class="fa-solid fa-person-running"></i> 單人冒險 6 步驟
+            </button>
+            <button class="tab-btn" data-tab="coop" role="tab" aria-selected="false">
+              <i class="fa-solid fa-people-arrows"></i> 多人協作模式
+            </button>
+            <button class="tab-btn" data-tab="pvp" role="tab" aria-selected="false">
+              <i class="fa-solid fa-khanda"></i> 陣營對決（PvP）
+            </button>
+          </div>
+
+          <!-- 玩法分頁 A：三種登入方式 -->
+          <div class="tab-panel active" data-panel="login">
+            <div class="grid-3">
+              <div class="glass-card">
+                <div class="icon-box"><i class="fa-solid fa-school"></i></div>
+                <span class="pill cyan">畫面最左側入口</span>
+                <h3 class="card-title" style="margin-top: 10px;">老師／學生（OpenID）</h3>
+                <p class="card-text">
+                  專為 1–12 年級在學學生與學校教師設計，使用各縣市教育雲 <strong>OpenID</strong> 登入，系統即可自動對應所屬學校與班級，參與校際與分齡排行榜！
+                </p>
+              </div>
+              <div class="glass-card">
+                <div class="icon-box purple"><i class="fa-solid fa-user-check"></i></div>
+                <span class="pill purple">畫面中間入口</span>
+                <h3 class="card-title" style="margin-top: 10px;">一般會員登入</h3>
+                <p class="card-text">
+                  適合非 1–12 年級社會大眾，或想以一般玩家身分體驗的教師。官方建議使用 <strong>Google 帳號</strong>（亦支援 Facebook、LINE、Apple ID）；首次登入須至信箱接收 <strong>6 位數 OTP 驗證碼</strong>並於 <strong>5 分鐘內</strong>輸入完成。
+                </p>
+              </div>
+              <div class="glass-card">
+                <div class="icon-box gold"><i class="fa-solid fa-id-card"></i></div>
+                <span class="pill gold">畫面最右側入口</span>
+                <h3 class="card-title" style="margin-top: 10px;">因材網一般帳號</h3>
+                <p class="card-text">
+                  直接以學校管理員或授課教師於「教育部因材網」建立的一般帳號登入，無縫整合既有數位學習歷程與因材網學習紀錄。
+                </p>
+              </div>
+            </div>
+
+            <div class="callout-box" style="margin-top: 22px;">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div>
+                <strong>新手必看注意事項</strong>
+                <p class="card-text" style="margin-top: 4px;">
+                  初次登入時建立的<strong>戰士暱稱僅能設定一次，日後無法更改</strong>，請務必慎重命名！進入遊戲後，可隨時於設定選單開啟或關閉<strong>注音顯示</strong>，並依閱讀習慣微調字體大小與音樂／音效音量。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 玩法分頁 B：單人冒險 6 步驟 -->
+          <div class="tab-panel" data-panel="solo">
+            <div class="timeline">
+              <div class="glass-card step-card">
+                <span class="step-num font-tech">STEP 01</span>
+                <h4 class="card-title"><i class="fa-solid fa-map-pin" style="color: var(--cyan);"></i> 選關或輸入關卡碼</h4>
+                <p class="card-text">每次會隨機出現 2 道時空戰役關卡，顯示戰役地點（如瑞芳、臺灣）與全國成功／討伐次數；也可直接輸入專屬<strong>關卡碼</strong>挑戰指定主題！</p>
+              </div>
+              <div class="glass-card step-card">
+                <span class="step-num font-tech">STEP 02</span>
+                <h4 class="card-title"><i class="fa-solid fa-hourglass-start" style="color: var(--purple);"></i> 180 秒時空穿梭</h4>
+                <p class="card-text">進入約 <strong>180 秒</strong>籌備期：預覽本場手牌知識卡、點擊迴紋針查閱外部延伸資料（順便賺導師經驗！），並依題目科目切換最適合的導師與 3 隻戰寵。</p>
+              </div>
+              <div class="glass-card step-card">
+                <span class="step-num font-tech">STEP 03</span>
+                <h4 class="card-title"><i class="fa-solid fa-hand-pointer" style="color: var(--gold);"></i> 60 秒限時拖曳出擊</h4>
+                <p class="card-text">每回合限時 <strong>60 秒</strong>，詳讀上方情境素養題幹後，將手中正確的知識卡拖曳至對應答案格，確認無誤後果斷按下「出擊」！</p>
+              </div>
+              <div class="glass-card step-card">
+                <span class="step-num font-tech">STEP 04</span>
+                <h4 class="card-title"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--emerald);"></i> 戰寵鷹架精準支援</h4>
+                <p class="card-text">遇到難題別慌張！發動出戰戰寵技能（每隻每場限 1 次），即時取得文本關鍵字高亮、整體解題方向或答案區知識卡提示。</p>
+              </div>
+              <div class="glass-card step-card">
+                <span class="step-num font-tech">STEP 05</span>
+                <h4 class="card-title"><i class="fa-solid fa-shield-halved" style="color: var(--pink);"></i> 攻防交鋒與解析</h4>
+                <p class="card-text">答對即對魔王發動強大能量攻擊，答錯則需承受魔王反擊（此時導師防禦與護盾將發揮關鍵作用），並於回合後檢視完整解答說明。</p>
+              </div>
+              <div class="glass-card step-card">
+                <span class="step-num font-tech">STEP 06</span>
+                <h4 class="card-title"><i class="fa-solid fa-award" style="color: var(--cyan);"></i> 戰果結算與成長</h4>
+                <p class="card-text">通關後詳細統計獲得積分、能量、戰鬥用時、攻擊正確率與導師經驗值，同步推進各項璀璨成就並更新魔王戰史！</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 玩法分頁 C：多人協作模式 -->
+          <div class="tab-panel" data-panel="coop">
+            <div class="grid-2">
+              <div class="glass-card">
+                <div class="icon-box emerald"><i class="fa-solid fa-handshake"></i></div>
+                <h3 class="card-title">最多 4 人組隊・高積分協作</h3>
+                <p class="card-text">
+                  建立房間產生專屬<strong>房間碼</strong>，邀請線上玩家、好友或同校夥伴組隊挑戰「世界篇」或「臺灣篇」。多人模式不僅樂趣加倍，<strong>平均獲得積分更明顯高於單人模式</strong>！
+                </p>
+                <ul class="feature-list">
+                  <li><i class="fa-solid fa-layer-group"></i><span><strong>導師技能可疊加</strong>：隊員於穿梭期刻意選擇不同科目導師，只要科目符合題目，戰隊加成全面疊加！</span></li>
+                  <li><i class="fa-solid fa-magnifying-glass-chart"></i><span><strong>穿梭期分工查證</strong>：每人認領部分手牌知識卡點閱迴紋針，大幅縮短全隊閱讀負擔。</span></li>
+                  <li><i class="fa-solid fa-comments"></i><span><strong>策略討論時間＋戰陣聊天室</strong>：每回合設有專屬討論時段，透過聊天室即時交流推論。</span></li>
+                </ul>
+              </div>
+
+              <div class="glass-card">
+                <div class="icon-box gold"><i class="fa-solid fa-chess-knight"></i></div>
+                <h3 class="card-title">輪流行動與 6 次戰寵共享</h3>
+                <p class="card-text">
+                  協作戰鬥考驗隊友間的默契與資源分配，精準掌握以下規則即可戰無不勝：
+                </p>
+                <ul class="feature-list">
+                  <li><i class="fa-solid fa-arrows-rotate"></i><span><strong>輪流行動次數</strong>：輪到行動的隊員每次擁有 <strong>2 次行動機會</strong>（2 人組隊時部分回合提供 <strong>3 次</strong>），可執行放置卡片、更換手牌或交換答案格卡片。</span></li>
+                  <li><i class="fa-solid fa-rotate-left"></i><span><strong>送出前自由重置</strong>：在正式確認出擊前若發現邏輯有誤，可隨時重置重新調整配置。</span></li>
+                  <li><i class="fa-solid fa-paw"></i><span><strong>全隊戰寵共享上限</strong>：整場戰鬥全隊合計最多發動 <strong>6 次戰寵技能</strong>，請保留在最關鍵的長文魔王題！</span></li>
+                  <li><i class="fa-solid fa-stopwatch"></i><span><strong>結算限時 60 秒</strong>：戰鬥結束後請於 60 秒內查看戰績與解析。</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 玩法分頁 D：陣營對決模式（PvP） -->
+          <div class="tab-panel" data-panel="pvp">
+            <div class="glass-card">
+              <div class="grid-2" style="align-items: center;">
+                <div>
+                  <span class="pill pink"><i class="fa-solid fa-fire"></i> 雙隊競速交鋒</span>
+                  <h3 class="card-title" style="margin-top: 10px; font-size: 1.4rem;">陣營模式（PvP）競賽規則</h3>
+                  <p class="card-text">
+                    兩支隊伍挑戰完全相同的題目組合（約 <strong>5 至 15 題</strong>、總時限如 <strong>900 秒</strong>），畫面上方即時顯示雙方推進進度條，緊張感破表！
+                  </p>
+                  <ul class="feature-list">
+                    <li><i class="fa-solid fa-flag-checkered"></i><span><strong>勝負判定</strong>：率先完成所有關卡的隊伍獲勝；若同時完賽或時間屆滿，則比較<strong>平均答題正確率</strong>定勝負。</span></li>
+                    <li><i class="fa-solid fa-scale-balanced"></i><span><strong>公平人數差補償</strong>：即使隊伍人數處於劣勢，系統仍提供優渥的積分倍率加乘，鼓勵以寡擊眾！</span></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="card-title" style="font-size: 1.05rem; color: var(--cyan);">
+                    <i class="fa-solid fa-table"></i> 陣營模式人數差積分倍率對照表
+                  </h4>
+                  <div class="table-wrap">
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>己方相較敵方人數差</th>
+                          <th>勝方積分倍率</th>
+                          <th>敗方積分倍率</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>少 2 人</strong>（以寡擊眾）</td>
+                          <td class="rate-win">130%</td>
+                          <td class="rate-lose">115%</td>
+                        </tr>
+                        <tr>
+                          <td><strong>少 1 人</strong>（逆風作戰）</td>
+                          <td class="rate-win">125%</td>
+                          <td class="rate-lose">110%</td>
+                        </tr>
+                        <tr>
+                          <td><strong>人數相等／多 1–2 人</strong></td>
+                          <td class="rate-win">120%</td>
+                          <td class="rate-lose">105%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         章節五：個人養成、璀璨成就與新版特色
+         ==================================================================== -->
+    <section id="progression" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="fa-solid fa-trophy"></i> 養成中樞與版本進化</div>
+          <h2 class="section-title">個人養成系統、91+ 璀璨成就與新版重磅亮點</h2>
+          <p class="section-desc">
+            從個人九大管理頁面、全國分齡排行榜，到最新登場的黑洞任務、AI 導師與在地文化主題關卡，打造源源不絕的探索動力！
+          </p>
+        </div>
+
+        <!-- 個人九大中樞 + 全國排行 -->
+        <div class="grid-2 reveal" style="margin-bottom: 28px;">
+          <div class="glass-card">
+            <h3 class="card-title"><i class="fa-solid fa-id-badge" style="color: var(--cyan);"></i> 個人頁面九大功能中樞</h3>
+            <p class="card-text">一站式管理你的所有戰績、圖鑑與學習成長軌跡：</p>
+            <div class="pill-group" style="margin-top: 16px;">
+              <span class="pill cyan"><i class="fa-solid fa-chart-simple"></i> 學習紀錄</span>
+              <span class="pill cyan"><i class="fa-solid fa-map"></i> 關卡</span>
+              <span class="pill cyan"><i class="fa-solid fa-layer-group"></i> 知識卡</span>
+              <span class="pill purple"><i class="fa-solid fa-user-shield"></i> 時空導師</span>
+              <span class="pill purple"><i class="fa-solid fa-paw"></i> 戰寵</span>
+              <span class="pill pink"><i class="fa-solid fa-dragon"></i> 魔王戰史</span>
+              <span class="pill gold"><i class="fa-solid fa-trophy"></i> 成就</span>
+              <span class="pill gold"><i class="fa-solid fa-bullhorn"></i> 活動</span>
+              <span class="pill emerald"><i class="fa-solid fa-graduation-cap"></i> 因材網學習紀錄</span>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3 class="card-title"><i class="fa-solid fa-ranking-star" style="color: var(--gold);"></i> 全國與分齡校際排行榜</h3>
+            <p class="card-text">
+              即時查詢全國戰士最新積分排名！系統並規劃與支援<strong>國小、國中、高中專屬分齡榜</strong>及<strong>學校單位排行</strong>，不定期搭配主題積分賽舉辦專屬獎勵活動，與全臺高手一較高下！
+            </p>
+          </div>
+        </div>
+
+        <!-- 91+ 璀璨成就系統（含互動篩選） -->
+        <div class="glass-card reveal" style="margin-bottom: 28px;">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px;">
+            <div>
+              <h3 class="card-title" style="margin-bottom: 4px;">
+                <i class="fa-solid fa-medal" style="color: var(--gold);"></i> 璀璨成就系統（91 項以上）
+              </h3>
+              <p class="card-text" style="font-size: 0.92rem;">
+                達成條件後，記得在成就頁面<strong>主動點選已達成項目</strong>，即可立即領取豐厚積分與能量獎勵！
+              </p>
+            </div>
+            <div class="filter-bar" style="margin-bottom: 0;">
+              <button class="filter-chip active" data-ach-filter="all"><i class="fa-solid fa-border-all"></i> 全部</button>
+              <button class="filter-chip" data-ach-filter="battle"><i class="fa-solid fa-bolt"></i> 連擊戰鬥</button>
+              <button class="filter-chip" data-ach-filter="pet"><i class="fa-solid fa-paw"></i> 戰寵養成</button>
+              <button class="filter-chip" data-ach-filter="boss"><i class="fa-solid fa-dragon"></i> 魔王討伐</button>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="achievement-card" data-ach-cat="battle">
+              <div class="ach-icon"><i class="fa-solid fa-music"></i></div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 4px;">時空四重奏 I–III</h4>
+                <p class="card-text" style="font-size: 0.86rem;">首次於單一回合內完美通關 4 格正確知識卡，展現精準直覺。</p>
+              </div>
+            </div>
+            <div class="achievement-card" data-ach-cat="battle">
+              <div class="ach-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 4px;">閃電五連擊 I–III</h4>
+                <p class="card-text" style="font-size: 0.86rem;">單回合連續答對 5 格知識卡，化為疾風驟雨般的致命攻勢。</p>
+              </div>
+            </div>
+            <div class="achievement-card" data-ach-cat="battle">
+              <div class="ach-icon"><i class="fa-solid fa-dice-six"></i></div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 4px;">六六大順 I–III</h4>
+                <p class="card-text" style="font-size: 0.86rem;">挑戰超高難度 6 格全對一回合通關，實力與氣勢兼具。</p>
+              </div>
+            </div>
+            <div class="achievement-card" data-ach-cat="pet">
+              <div class="ach-icon"><i class="fa-solid fa-paw"></i></div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 4px;">戰寵訓練家／收藏家</h4>
+                <p class="card-text" style="font-size: 0.86rem;">不斷收服與培育四大種族時空戰寵，壯大你的專屬支援陣容。</p>
+              </div>
+            </div>
+            <div class="achievement-card" data-ach-cat="pet">
+              <div class="ach-icon"><i class="fa-solid fa-angles-up"></i></div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 4px;">超級進化 I–III</h4>
+                <p class="card-text" style="font-size: 0.86rem;">運用知識書與能量完成戰寵多階段進化，解鎖終極型態與技能。</p>
+              </div>
+            </div>
+            <div class="achievement-card" data-ach-cat="boss">
+              <div class="ach-icon"><i class="fa-solid fa-gavel"></i></div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 4px;">時空之罪的審判 I–III</h4>
+                <p class="card-text" style="font-size: 0.86rem;">累計擊退破壞時空秩序的宇宙魔王，另有「機械族的剋星 I」、「新手冒險者」等豐富里程碑。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 新版四大重磅擴充特色 -->
+        <div class="grid-4 reveal">
+          <article class="glass-card">
+            <div class="icon-box purple"><i class="fa-solid fa-circle-dot"></i></div>
+            <h3 class="card-title">黑洞任務＆AI 導師</h3>
+            <p class="card-text">
+              深入全新世界觀副本「黑洞任務」補充時空穿梭油料，通關更可獲得珍貴的 <strong>AI 晶片</strong>，於實戰關鍵時刻召喚 <strong>AI 導師</strong>前來助陣！
+            </p>
+          </article>
+          <article class="glass-card">
+            <div class="icon-box cyan"><i class="fa-solid fa-filter"></i></div>
+            <h3 class="card-title">科目／年段精準搜尋</h3>
+            <p class="card-text">
+              新版全面強化關卡檢索體驗，支援依照學習年段、特定學科與關卡名稱快速搜尋，精準鎖定最適合當前學習進度的挑戰。
+            </p>
+          </article>
+          <article class="glass-card">
+            <div class="icon-box emerald"><i class="fa-solid fa-map-marked-alt"></i></div>
+            <h3 class="card-title">在地文化主題關卡碼</h3>
+            <p class="card-text">
+              收錄<strong>「臺灣行腳（星球示範）」、「小倫遊臺灣（桃園與新北、臺北、基隆與宜蘭）」、「霞海情緣」、「鐵流」</strong>等充滿臺灣人文風情的專屬主題關卡。
+            </p>
+          </article>
+          <article class="glass-card">
+            <div class="icon-box gold"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <h3 class="card-title">教師 AI 導入擬題</h3>
+            <p class="card-text">
+              支援教師結合 AI 協作（如飲食文化素養題實作）高效率生成教學情境關卡，一鍵產出專屬<strong>關卡碼</strong>直接帶入課堂即時互動！
+            </p>
+            <div style="margin-top: 14px;">
+              <a href="https://reurl.cc/86Lv6j" target="_blank" rel="noopener noreferrer" style="color: var(--gold); font-weight: 700; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-file-pen"></i> 前往《時空學園》命題資源 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         章節六：快速指南與官方資訊
+         ==================================================================== -->
+    <section id="quick-guide" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="fa-solid fa-circle-info"></i> 快速指南</div>
+          <h2 class="section-title">開戰前必看資訊與官方支援</h2>
+          <p class="section-desc">
+            掌握開放時段、登入網址與聯繫窗口，立即號召同學好友一同踏上時空素養大冒險！
+          </p>
+        </div>
+
+        <div class="grid-3 reveal">
+          <div class="glass-card">
+            <div class="icon-box cyan"><i class="fa-solid fa-clock"></i></div>
+            <h3 class="card-title">正式運行時間</h3>
+            <p class="card-text">
+              每日 <strong>07:00 – 22:00</strong> 穩定開放，課堂教學、課後自主練習與假日好友組隊皆可暢玩。
+            </p>
+          </div>
+          <div class="glass-card">
+            <div class="icon-box gold"><i class="fa-solid fa-sliders"></i></div>
+            <h3 class="card-title">個人化友善設定</h3>
+            <p class="card-text">
+              低年級或偏好輔助閱讀的玩家可於設定開啟<strong>注音顯示</strong>，並自由調整文字大小、背景音樂與戰鬥音效。
+            </p>
+          </div>
+          <div class="glass-card">
+            <div class="icon-box purple"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <h3 class="card-title">官方網站、命題資源與信箱</h3>
+            <p class="card-text" style="margin-bottom: 12px;">
+              立即前往官方平臺體驗遊戲、下載教學命題資源，或聯繫研發團隊：
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem;">
+              <a href="https://adl.edu.tw/twa/game/" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); font-weight: 700;">
+                <i class="fa-solid fa-globe"></i> 《時空學園》官方網站（adl.edu.tw/twa/game/）
+              </a>
+              <a href="https://reurl.cc/86Lv6j" target="_blank" rel="noopener noreferrer" style="color: var(--gold); font-weight: 700;">
+                <i class="fa-solid fa-file-pen"></i> 《時空學園》命題資源（reurl.cc/86Lv6j）
+              </a>
+              <a href="mailto:twa@gapps.ntust.edu.tw" style="color: #d8b4fe; font-weight: 600;">
+                <i class="fa-solid fa-envelope"></i> twa@gapps.ntust.edu.tw
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       頁尾 Footer（FB 粉絲專頁位於 Copyright 正上方）
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-info">
+        <i class="fa-solid fa-atom" style="color: var(--cyan); margin-right: 6px;"></i>
+        <strong>時空學園：大型素養解題卡片遊戲（Time Warrior Academy）</strong><br />
+        國立臺灣科技大學迷你教育遊戲研究團隊（NTUSTMEG）× 教育部資訊及科技教育司 × 教育部因材網
+      </div>
+
+      <div class="footer-divider" aria-hidden="true"></div>
+
+      <!-- FB 粉絲專頁 ICON 與連結（位於 Copyright 正上方） -->
+      <div class="footer-social">
+        <a
+          href="https://www.facebook.com/happyliyuchilltiger/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fb-fanpage-link"
+          aria-label="前往 Facebook 粉絲專頁：快樂鯉魚秋老虎"
+        >
+          <i class="fa-brands fa-facebook"></i>
+          <span>快樂鯉魚秋老虎</span>
+          <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.85rem;"></i>
+        </a>
+      </div>
+
+      <p class="footer-copyright">Copyright © Liyuchiutiger Gongminshen</p>
+    </div>
+  </footer>
+
+  <!-- 回到頂部按鈕 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到頁面頂部">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ======================================================================
+       左下角懸浮可自由拖曳吉祥物（懸停霓虹彩色發光＋抖動）
+       ====================================================================== -->
+  <div
+    class="mascot-widget"
+    id="mascotWidget"
+    role="region"
+    aria-label="可拖曳吉祥物 LiyuChillGuy"
+    title="按住即可自由拖曳到畫面任何地方"
+  >
+    <img src="image/LiyuChillGuy.svg" alt="LiyuChillGuy 吉祥物" class="mascot-img" draggable="false" />
+    <span class="mascot-tooltip">
+      <i class="fa-solid fa-up-down-left-right"></i> 可自由拖曳
+    </span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
