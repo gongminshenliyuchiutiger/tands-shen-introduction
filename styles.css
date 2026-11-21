@@ -206,20 +206,21 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   list-style: none;
 }
 
 .nav-links a {
-  padding: 8px 14px;
+  padding: 8px 11px;
   border-radius: 8px;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-muted);
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -1070,6 +1071,81 @@ button {
 }
 
 /* ==========================================================================
+   原創輔助系統生態（五大專屬系統）
+   ========================================================================== */
+.system-featured-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(16, 24, 52, 0.86) 45%, rgba(168, 85, 247, 0.16));
+  border-color: rgba(0, 240, 255, 0.38);
+}
+
+.system-featured-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.system-featured-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.system-featured-title {
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+
+.system-featured-action {
+  flex-shrink: 0;
+}
+
+.systems-subhead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+
+.systems-subhead i {
+  color: var(--gold);
+}
+
+.system-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.system-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.system-card-top .icon-box {
+  margin-bottom: 0;
+}
+
+.system-card-footer {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.system-link-btn {
+  width: 100%;
+}
+
+/* ==========================================================================
    頁尾 Footer（嚴格遵守 FB 粉專在 Copyright 正上方）
    ========================================================================== */
 .site-footer {
@@ -1080,10 +1156,16 @@ button {
 }
 
 .footer-top-info {
-  max-width: 680px;
+  max-width: 100%;
   margin: 0 auto 28px;
   color: var(--text-muted);
   font-size: 0.94rem;
+}
+
+.footer-credit-line {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(0.76rem, 1.45vw, 0.94rem);
 }
 
 .footer-divider {
@@ -1331,7 +1413,7 @@ button {
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1080px) {
   .menu-toggle {
     display: inline-flex;
   }
@@ -1364,9 +1446,21 @@ button {
   .nav-actions .btn {
     display: none;
   }
+}
 
+@media (max-width: 920px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .system-featured-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .system-featured-action,
+  .system-featured-action .btn {
+    width: 100%;
   }
 }
 
@@ -1428,6 +1522,10 @@ button {
 
   .site-footer {
     padding-bottom: 185px;
+  }
+
+  .footer-credit-line {
+    white-space: normal;
   }
 
   .back-to-top {
